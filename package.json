@@ -1,0 +1,21 @@
+{
+	"type": "module",
+	"name": "fast-geoip-browser",
+	"description": "Fast GeoIP lookup for browsers using doc999tor-fast-geoip",
+	"devDependencies": {
+		"eslint-config-standard-universal": "^1.0.8",
+		"typescript": "^5.8.3"
+	},
+	"scripts": {
+		"build": "tsc"
+	},
+	"files": [
+		"!**/*.ts",
+		"**/*.js",
+		"**/*.d.ts",
+		"**/*.js.map"
+	],
+	"dependencies": {
+		"doc999tor-fast-geoip": "^1.1.334"
+	}
+}
