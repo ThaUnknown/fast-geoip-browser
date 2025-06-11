@@ -40,7 +40,7 @@ export function firstArrayItem (item: ipBlockRecord): number {
   return item[0]
 }
 
-export function getNextIp<recordType> (data: recordType[], index: number, currentNextIp: number, extractKey: extractKeyFunction<recordType>): number {
+export function getNextIp<recordType = number> (data: recordType[], index: number, currentNextIp: number, extractKey: extractKeyFunction<recordType>): number {
   if (index < (data.length - 1)) {
     return extractKey(data[index + 1]!)
   } else {
