@@ -2,6 +2,7 @@
 	"type": "module",
 	"name": "fast-geoip-browser",
 	"description": "Fast GeoIP lookup for browsers using doc999tor-fast-geoip",
+	"version": "1.0.0",
 	"devDependencies": {
 		"eslint-config-standard-universal": "^1.0.8",
 		"typescript": "^5.8.3"
