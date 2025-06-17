@@ -1,8 +1,8 @@
 {
   "extends": "eslint-config-standard-universal/tsconfig.json",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": false,
+    "rewriteRelativeImportExtensions": false,
     "outDir": null
   },
   "include": [

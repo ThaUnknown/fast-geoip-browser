@@ -1,18 +1,17 @@
 import params from 'doc999tor-fast-geoip/build/params.js'
 
-import { binarySearch, firstArrayItem, getNextIp, identity, ipStr2Num, type Format, type indexFile, type ipBlockRecord, type locationRecord } from './utils.ts'
+import { binarySearch, firstArrayItem, getNextIp, identity, ipStr2Num, type Format, type indexFile, type ipBlockRecord, type locationRecord } from './utils'
 
-const JSON = { with: { type: 'json' } }
 const MASK = ipStr2Num('255.255.255.255')
 
 const ipCache: Record<string, Format> = {}
-const locationCache = import('doc999tor-fast-geoip/data/locations.json', JSON).then(m => m.default as locationRecord[])
+const locationCache = import('doc999tor-fast-geoip/data/locations.json', { with: { type: 'json' } }).then(m => m.default as locationRecord[])
 
 async function readFile<T extends Format> (filename: string): Promise<T> {
   if (ipCache[filename] !== undefined) {
     return await Promise.resolve(ipCache[filename] as T)
   }
-  const content = await import(`doc999tor-fast-geoip/data/${filename}.json`, JSON).then(m => m.default as T)
+  const content = await import(`doc999tor-fast-geoip/data/${filename}.json`, { with: { type: 'json' } }).then(m => m.default as T)
   ipCache[filename] = content
   return content
 }

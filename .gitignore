@@ -3,3 +3,4 @@ pnpm-lock.yaml
 *.js
 *d.ts
 *.js.map
+!eslint.config.js
